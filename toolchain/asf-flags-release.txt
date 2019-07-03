@@ -1,0 +1,43 @@
+## C++ FLAGS
+-mthumb
+-D__SAML21G18B__
+-O3
+-ffunction-sections
+-fdata-sections
+-fno-rtti
+-fno-exceptions
+-mlong-calls
+-Wall
+-Wextra
+-mcpu=cortex-m0plus
+-c
+-std=c++14
+-Wl,-Map
+-Wl,mapfile
+-Wl,--cref
+-MD
+-MP
+-MF "$(@:%.o=%.d)"
+-MT"$(@:%.o=%.d)"
+-MT"$(@:%.o=%.o)"
+
+## C FLAGS
+-x c
+-mthumb
+-D__SAML21G18B__
+-DNDEBUG
+-O3
+-ffunction-sections
+-fdata-sections
+-mlong-calls
+-Wall
+-Wextra
+-mcpu=cortex-m0plus
+-c
+-std=gnu99
+-MD
+-MP
+-MF "$(@:%.o=%.d)"
+-MT"$(@:%.o=%.d)"
+-MT"$(@:%.o=%.o)"
+

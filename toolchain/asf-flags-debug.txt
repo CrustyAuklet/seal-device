@@ -1,0 +1,56 @@
+## C++ FLAGS
+-mthumb
+-D__SAML21G18B__
+-DDEBUG
+-Og
+-ffunction-sections
+-fdata-sections
+-fno-rtti
+-fno-exceptions
+-mlong-calls
+-g3
+-Wall
+-Wextra
+-mcpu=cortex-m0plus
+-c
+-std=c++14
+-MD
+-MP
+-MF "$(@:%.o=%.d)"
+-MT"$(@:%.o=%.d)"
+-MT"$(@:%.o=%.o)"
+
+## C FLAGS
+-x c
+-mthumb
+-D__SAML21G18B__
+-DDEBUG
+-Og
+-ffunction-sections
+-fdata-sections
+-mlong-calls
+-g3
+-Wall
+-Wextra
+-mcpu=cortex-m0plus
+-c
+std=gnu99
+-MD
+-MP
+-MF "$(@:%.o=%.d)"
+-MT"$(@:%.o=%.d)"
+-MT"$(@:%.o=%.o)"
+
+## LINKER FLAGS
+-mthumb
+-Wl,-Map="$(OutputFileName).map"
+-Wl,--start-group
+-lm
+-Wl,--end-group
+-L"../CPPASF/saml21/DeviceStartup"
+-Wl,--gc-sections
+-mcpu=cortex-m0plus
+-Wl,-Map
+-Wl,mapfile
+-Wl,--cref
+-Tsaml21g18b_flash.ld
