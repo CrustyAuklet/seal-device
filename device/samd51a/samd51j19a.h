@@ -540,7 +540,7 @@ void SDHC0_Handler               ( void );
 
 #include <core_cm4.h>
 #if !defined DONT_USE_CMSIS_INIT
-#include "system_samd51.h"
+#include "system_device.h"
 #endif /* DONT_USE_CMSIS_INIT */
 
 /*@}*/
