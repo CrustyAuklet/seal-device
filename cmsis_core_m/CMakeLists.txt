@@ -1,12 +1,16 @@
 cmake_minimum_required(VERSION 3.13)
 
+# declare this library and set it as an INTERFACE library.
+# this means we don't actually compile anything, we just provide files and properties to consumers
 add_library(cmsisCore_M INTERFACE)
 
+# all consumers should use these include directories
 target_include_directories(cmsisCore_M
     INTERFACE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
+# all consumers should use these sources
 target_sources(cmsisCore_M
     INTERFACE
         ./core_sc300.h
